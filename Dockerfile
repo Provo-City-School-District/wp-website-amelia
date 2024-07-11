@@ -6,6 +6,12 @@ COPY ./custom.ini /usr/local/etc/php/conf.d/custom.ini
 RUN a2enmod rewrite
 RUN a2enmod headers
 
+# Set ServerTokens directive to Prod
+RUN echo "ServerTokens Prod" >> /etc/apache2/apache2.conf
+
+# Set ServerName
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 ## Harden File Permissions
 RUN chown -R www-data:www-data /var/www/html/wp-content
 RUN find /var/www/html/wp-content/ -type d -exec chmod 775 {} \;

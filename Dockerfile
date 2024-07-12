@@ -2,14 +2,13 @@ FROM wordpress:php8.3-apache
 
 COPY ./custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-## Enable apache mods.
+## Config Apache
+# Enable apache mods.
 RUN a2enmod rewrite
 RUN a2enmod headers
 
-# Set ServerTokens directive to Prod
+# config changes
 RUN echo "ServerTokens Prod" >> /etc/apache2/apache2.conf
-
-# Set ServerName
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 ## Harden File Permissions

@@ -1,20 +1,7 @@
 <footer id="mainFooter">
 	<section id="teacherAccess">
 		<h1 class="teacherActivate"><a href="<?php echo get_home_url(); ?>/teacher-access/">Teacher Access</a></h1>
-
-		<ul class="imagelist">
-			<?php
-			// create a new cURL resource
-			$globalfooter = curl_init();
-			// set URL and other appropriate options
-			curl_setopt($globalfooter, CURLOPT_URL, 'https://globalassets.provo.edu/globalpages/teacher_access_menu.php');
-			curl_setopt($globalfooter, CURLOPT_HEADER, 0);
-			// grab URL and pass it to the browser
-			curl_exec($globalfooter);
-			// close cURL resource, and free up system resources
-			curl_close($globalfooter);
-			?>
-		</ul>
+		<?= do_shortcode('[get_teacher_access_menu]'); ?>
 	</section>
 	<?php
 	// create a new cURL resource
@@ -22,6 +9,7 @@
 	// set URL and other appropriate options
 	curl_setopt($globalfooter, CURLOPT_URL, 'https://globalassets.provo.edu/globalpages/ada-footer.php');
 	curl_setopt($globalfooter, CURLOPT_HEADER, 0);
+	curl_setopt($globalfooter, CURLOPT_SSL_VERIFYPEER, false);
 	// grab URL and pass it to the browser
 	curl_exec($globalfooter);
 	// close cURL resource, and free up system resources

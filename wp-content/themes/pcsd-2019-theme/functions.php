@@ -141,6 +141,10 @@ function pcsd_tutorial_admin_page()
     // set URL and other appropriate options
     curl_setopt($tuts_page, CURLOPT_URL, 'https://globalassets.provo.edu/globalpages/tutorials-page.php');
     curl_setopt($tuts_page, CURLOPT_HEADER, 0);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($tuts_page, CURLOPT_SSL_VERIFYPEER, false);
     // grab URL and pass it to the browser
     curl_exec($tuts_page);
     // close cURL resource, and free up system resources
@@ -519,22 +523,31 @@ function twoColumn3_func($atts)
 add_shortcode('TwoColumn-Second-Column-End', 'twoColumn3_func');
 
 //[directory url=""]
-
 function directory_func($atts)
 {
     $category = shortcode_atts(array(
         'url' => 'something',
     ), $atts);
-  
     $directory_url = "{$category['url']}";
-    
-    $contents = file_get_contents($directory_url);
-    //wrap the contents with the appropriate container
-    $contents = '<div class="staff-member-listing">'.$contents.'</div>';
 
-    return $contents;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $directory_url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    $output = curl_exec($ch);
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
+    }
+    curl_close($ch);
+    $output = '<div class="staff-member-listing">' . $output . '</div>';
+    return $output;
 }
 add_shortcode('directory', 'directory_func');
+
 //[schedule_start_list]
 function schedule_start_func()
 {
@@ -547,7 +560,26 @@ function schedule_end_func()
     return '</div>';
 }
 add_shortcode('schedule_end_list', 'schedule_end_func');
-
+// [get_teacher_access_menu]
+function get_teacher_access_menu()
+{
+    echo '<ul class="imagelist">';
+    // create a new cURL resource
+    $get_teacher_access_menu = curl_init();
+    // set URL and other appropriate options
+    curl_setopt($get_teacher_access_menu, CURLOPT_URL, 'https://globalassets.provo.edu/globalpages/teacher_access_menu.php');
+    curl_setopt($get_teacher_access_menu, CURLOPT_HEADER, 0);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($get_teacher_access_menu, CURLOPT_SSL_VERIFYPEER, false);
+    // grab URL and pass it to the browser
+    curl_exec($get_teacher_access_menu);
+    // close cURL resource, and free up system resources
+    curl_close($get_teacher_access_menu);
+    echo '</ul>';
+}
+add_shortcode('get_teacher_access_menu', 'get_teacher_access_menu');
 //====================================== Child Nutrition Menu Pulls ======================================
 //[cn-menu]
 function cn_global_menu()
@@ -575,6 +607,10 @@ function cn_ele_menu()
     curl_setopt($cnelemenuhandle, CURLOPT_URL, $cnelemenuurl);
     // Set the result output to be a string.
     curl_setopt($cnelemenuhandle, CURLOPT_RETURNTRANSFER, true);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($cnelemenuhandle, CURLOPT_SSL_VERIFYPEER, false);
     $cnelemenuoutput = curl_exec($cnelemenuhandle);
     // close the curl connection
     curl_close($cnelemenuhandle);
@@ -592,6 +628,10 @@ function cn_mid_menu()
     curl_setopt($cnmidmenuhandle, CURLOPT_URL, $cnmidmenuurl);
     // Set the result output to be a string.
     curl_setopt($cnmidmenuhandle, CURLOPT_RETURNTRANSFER, true);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($cnmidmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
     $cnmidmenuoutput = curl_exec($cnmidmenuhandle);
     // close the curl connection
     curl_close($cnmidmenuhandle);
@@ -609,6 +649,10 @@ function cn_high_menu()
     curl_setopt($cnhighmenuhandle, CURLOPT_URL, $cnhighmenuurl);
     // Set the result output to be a string.
     curl_setopt($cnhighmenuhandle, CURLOPT_RETURNTRANSFER, true);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($cnhighmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
     $cnhighmenuoutput = curl_exec($cnhighmenuhandle);
     // close the curl connection
     curl_close($cnhighmenuhandle);
@@ -625,6 +669,10 @@ function cn_ihs_menu()
     curl_setopt($cnihsmenuhandle, CURLOPT_URL, $cnihsmenuurl);
     // Set the result output to be a string.
     curl_setopt($cnihsmenuhandle, CURLOPT_RETURNTRANSFER, true);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($cnihsmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
     $cnihsmenuoutput = curl_exec($cnihsmenuhandle);
     // close the curl connection
     curl_close($cnihsmenuhandle);
@@ -641,6 +689,10 @@ function cn_global_sidebarmenu()
     curl_setopt($cnmenuhandle, CURLOPT_URL, $cnmenuurl);
     // Set the result output to be a string.
     curl_setopt($cnmenuhandle, CURLOPT_RETURNTRANSFER, true);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($cnmenuhandle, CURLOPT_SSL_VERIFYPEER, false);
     $cnmenuoutput = curl_exec($cnmenuhandle);
     // close the curl connection
     curl_close($cnmenuhandle);
@@ -713,6 +765,10 @@ function district_school_year_calendar_pull()
     curl_setopt($schoolyear_cal, CURLOPT_TIMEOUT, 12);
     //so that it doesn't print the results right away and we can control where the results are printed
     curl_setopt($schoolyear_cal, CURLOPT_RETURNTRANSFER, TRUE);
+    // TODO: to verify certificate, but path to cerificate may move or change in the future. want to think through something so this doesn't get disjointed or forgotten, going to not verify for now
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+    // curl_setopt($ch, CURLOPT_CAINFO, '/etc/ssl/wildcard/star_provo_edu.crt'); // Path to CA certificates bundle
+    curl_setopt($schoolyear_cal, CURLOPT_SSL_VERIFYPEER, false);
     // grab URL and pass it to the browser
     $result = curl_exec($schoolyear_cal);
     // close cURL resource, and free up system resources

@@ -18,7 +18,7 @@ services:
       dockerfile: ./Dockerfile
       context: .
     ports:
-      - 8079:80
+      - 8080:80
     restart: always
     env_file: .env
     environment:

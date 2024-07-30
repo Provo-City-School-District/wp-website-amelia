@@ -1,11 +1,6 @@
-FROM wordpress:php8.3-apache
+FROM wordpress:php8.2-apache
 
 COPY ./custom.ini /usr/local/etc/php/conf.d/custom.ini
-
-## Config Apache
-# Enable apache mods.
-# RUN a2enmod rewrite
-# RUN a2enmod headers
 
 # config changes
 RUN echo "ServerTokens Prod" >> /etc/apache2/apache2.conf

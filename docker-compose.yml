@@ -34,7 +34,7 @@ services:
   amelia_myadmin:
     image: phpmyadmin:latest
     container_name: amelia_myadmin
-    restart: "no"
+    restart: always
     ports:
       - 4999:80
     environment:

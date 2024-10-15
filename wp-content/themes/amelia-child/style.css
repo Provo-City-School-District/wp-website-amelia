@@ -21,12 +21,12 @@ Variables
 ================================================================================================================*/
 
 :root {
-  --even-tile-bg-color: #e1e9f4;
-  --odd-tile-bg-color: #cddbee;
-  --primary-color: #2f6384;
-  --secondary-color: #e2806c;
-  --accent-color: #ffffff;
-  --white: #ffffff;
+	--even-tile-bg-color: #e1e9f4;
+	--odd-tile-bg-color: #cddbee;
+	--primary-color: #2f6384;
+	--secondary-color: #e2806c;
+	--accent-color: #ffffff;
+	--white: #ffffff;
 }
 
 
@@ -117,11 +117,11 @@ ul li~h3 {
 header styles
 ================================================================================================================*/
 #mainHeader {
-    background-image: url('assets/images/header-texture.png');
-    background-repeat: no-repeat;
-    background-color: #2f6384;
-     background-size: cover;
- }
+	background-image: url('assets/images/header-texture.png');
+	background-repeat: no-repeat;
+	background-color: #2f6384;
+	background-size: cover;
+}
 
 #mainHeader h1 {
 	position: absolute;
@@ -405,27 +405,29 @@ Teacher access
 /*================================================================================================================
  skip link styling
  ================================================================================================================*/
- a.skip-to-menu, a.skip-to-content {
-     left:-999px;
-     position:absolute;
-     top:auto;
-     width:1px;
-     height:1px;
-     overflow:hidden;
-     z-index:-999;
- }
- a.skip-to-menu:focus, a.skip-to-menu:active, a.skip-to-content:focus, a.skip-to-content:active {
-     color: #fff;
-     background-color:#000;
-     left: auto;
-     top: auto;
-     width: 20%;
-     height: auto;
-     overflow:auto;
-     margin: 10px 35%;
-     padding:5px;
-     border-radius: 15px;
-     text-align:center;
-     font-size:1.2em;
-     z-index:9999;
- }
+.skip-to-link {
+	left: -999px;
+	position: absolute;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: -999;
+}
+
+.skip-to-link:focus,
+.skip-to-link:active {
+	color: #fff;
+	background-color: #000;
+	left: auto;
+	top: auto;
+	width: 20%;
+	height: auto;
+	overflow: auto;
+	margin: 10px 35%;
+	padding: 5px;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 1.2em;
+	z-index: 9999;
+}

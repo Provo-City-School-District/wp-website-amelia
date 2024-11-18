@@ -23,10 +23,13 @@ Variables
 :root {
 	--even-tile-bg-color: #e1e9f4;
 	--odd-tile-bg-color: #cddbee;
-	--primary-color: #2f6384;
-	--secondary-color: #e2806c;
+	--primary-color: #17425E;
+	--secondary-color: #ffe5cf;
 	--accent-color: #ffffff;
 	--white: #ffffff;
+	--link-color: #45579c;
+	--link-hover-color: #6B3100;
+	--content-text-color: #17425e
 }
 
 
@@ -44,11 +47,12 @@ Theme specific coloring
 
 a {
 	text-decoration: none;
-	color: #45579c;
+	color: var(--link-color);
 }
 
 a:hover {
-	color: #fc7e02;
+	color: var(--link-hover-color);
+	text-decoration: underline;
 }
 
 #mainHeader #cludo-search-form .search-submit {
@@ -60,7 +64,7 @@ Fonts
 ================================================================================================================*/
 body {
 	font-family: Arial;
-	color: #02224f;
+	color: var(--content-text-color);
 }
 
 /*================================================================================================================

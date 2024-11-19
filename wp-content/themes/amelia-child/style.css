@@ -40,7 +40,7 @@ Theme specific coloring
 ================================================================================================================*/
 #mainSidebar,
 #mainFooter {
-	background-color: #2f6384;
+	background-color: var(--primary-color);
 }
 
 #contentArea {
@@ -58,7 +58,7 @@ a:hover {
 }
 
 #mainHeader #cludo-search-form .search-submit {
-	background-color: #e2806c;
+	background-color: var(--secondary-color);
 }
 
 /*================================================================================================================
@@ -74,7 +74,7 @@ Overall Structeral  Styles
 ================================================================================================================*/
 @media (max-height: 720px) {
 	body {
-		background-color: #e2806c;
+		background-color: var(--secondary-color);
 	}
 }
 
@@ -86,7 +86,7 @@ h2,
 h3,
 h4 {
 	font-family: 'Roboto', sans-serif;
-	color: #02224f;
+	color: var(--primary-color);
 	line-height: 1.05em;
 }
 
@@ -124,7 +124,7 @@ header styles
 ================================================================================================================*/
 #mainHeader {
 	background-repeat: no-repeat;
-	background-color: #2f6384;
+	background-color: var(--primary-color);
 	background-size: cover;
 }
 
@@ -132,13 +132,12 @@ header styles
 	position: absolute;
 	left: 127px;
 	top: 16px;
-	color: #fff;
+	color: var(--theme-white);
 	font-weight: 900;
 }
 
 #mainHeader #siteLogo {
 	width: 90px;
-	margin-top: -12px;
 	margin-left: -14px;
 }
 
@@ -148,7 +147,7 @@ header styles
 }
 
 #mainHeader .contactinfo {
-	color: #fff;
+	color: var(--theme-white);
 }
 
 #mainHeader .contactinfo li span.phone,
@@ -160,7 +159,7 @@ header styles
 Main Menu
 ================================================================================================================*/
 #mainMenu {
-	background-color: #e2806c;
+	background-color: var(--secondary-color);
 	font-family: 'Arial Black', Arial;
 }
 
@@ -169,16 +168,16 @@ Main Menu
 }
 
 #mainMenu>ul>li>a {
-	color: #2f6384;
+	color: var(--primary-color);
 }
 
 #mainMenu>ul>li>a:hover {
-	color: #fff;
+	color: var(--link-hover-color);
 }
 
 .mega-menu {
 	background: rgba(240, 240, 240, 0.97);
-	box-shadow: 1px 3px 5px #000;
+	box-shadow: 1px 3px 5px var(--theme-black);
 }
 
 /*==================================================
@@ -261,7 +260,7 @@ list icon color adjustments
 
 	#mainMenu .mobileMenu {
 		display: block;
-		color: #fff;
+		color: var(--theme-white);
 		margin-left: 10px;
 		font-size: 16px;
 	}
@@ -313,17 +312,17 @@ sidebar Area
 Calendar plugin styling
 ================================================================================================================*/
 #mainSidebar .simcal-calendar {
-	background-color: #fff;
+	background-color: var(--theme-white);
 	border-radius: 3px;
-	color: #02224f;
+	color: var(--primary-color);
 }
 
 #mainSidebar .simcal-calendar a {
-	color: #45579c;
+	color: var(--primary-color);
 }
 
 #mainSidebar .simcal-calendar a:hover {
-	color: #fc7e02;
+	color: var(--secondary-color);
 }
 
 #mainSidebar .simcal-calendar .simcal-event-title {
@@ -335,16 +334,16 @@ Calendar plugin styling
 }
 
 #mainSidebar .simcal-default-calendar-dark .simcal-nav-button {
-	color: #02365b !important;
+	color: var(--primary-color) !important;
 }
 
 #mainSidebar .simcal-default-calendar-list dt.simcal-day-label>span {
 	width: 94%;
-	color: #fff !important;
+	color: var(--theme-white) !important;
 }
 
 #mainSidebar .simcal-default-calendar-list .simcal-event-details {
-	border-bottom: 1px solid #02365b;
+	border-bottom: 1px solid var(--primary-color);
 }
 
 #mainSidebar .simcal-default-calendar-list .simcal-event-details .simcal-event-description {
@@ -353,15 +352,15 @@ Calendar plugin styling
 
 /*#mainSidebar .simcal-default-calendar-list .simcal-event-details .simcal-event-start-date {display: none;} */
 .single-page .simcal-day-label {
-	background-color: #02224f !important;
+	background-color: var(--primary-color) !important;
 }
 
 .single-page .simcal-present div {
-	border: 1px solid #fc7e02 !important;
+	border: 1px solid var(--secondary-color) !important;
 }
 
 .single-page .simcal-present .simcal-day-label {
-	background-color: #fc7e02 !important;
+	background-color: var(--secondary-color) !important;
 }
 
 /*================================================================================================================
@@ -370,41 +369,25 @@ Post grid
 .searchResults .post:nth-child(even),
 .postgrid .post:nth-child(even),
 .staff-member-listing .personalvCard:nth-child(even) {
-	background-color: #e1e9f4;
+	background-color: var(--even-tile-bg-color);
 }
 
 .searchResults .post:nth-child(odd),
 .postgrid .post:nth-child(odd),
 .staff-member-listing .personalvCard:nth-child(odd) {
-	background-color: #cddbee;
+	background-color: var(--odd-tile-bg-color);
 }
 
 /*================================================================================================================
 tile coloring
 ================================================================================================================*/
 .tiles .tile:nth-child(even) {
-	background-color: #e1e9f4;
+	background-color: var(--even-tile-bg-color);
 }
 
 .tiles .tile:nth-child(odd) {
-	background-color: #cddbee;
+	background-color: var(--odd-tile-bg-color);
 }
-
-
-/*@media (max-height: 680px) {
-	#mainHeader h1 {
-		top: 45px;
-	}
-	#mainHeader aside {
-		top: 60px;
-	}
-	#mainMenu {
-		margin-top: -25px;
-	}
-	.mega-menu {
-		z-index: 1000;
-	}
-}*/
 
 /*================================================================================================================
 Teacher access

@@ -8,3 +8,6 @@ MARIADB_ROOT_PASSWORD=''
 MYSQL_USER=''
 MYSQL_PASSWORD=''
 ```
+
+## Plugins Required
+- Advanced Custom Fields

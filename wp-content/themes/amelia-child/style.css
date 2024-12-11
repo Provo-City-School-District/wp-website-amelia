@@ -10,12 +10,6 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  amelia-child
 
- Color Pallet
- Primary -  BLUE - #2f6384
- Secondary - PINK - #e2806c
- Accent Color - White - #ffffff
-
-
 /*================================================================================================================
 Variables
 ================================================================================================================*/
@@ -32,6 +26,7 @@ Variables
 	--link-color: #45579c;
 	--link-hover-color: #6B3100;
 	--content-text: #02224f;
+	--mega-menu-hover: var(--link-hover-color);
 }
 
 
@@ -178,6 +173,10 @@ Main Menu
 .mega-menu {
 	background: rgba(240, 240, 240, 0.97);
 	box-shadow: 1px 3px 5px var(--theme-black);
+}
+
+.mega-menu a:hover {
+	color: var(--mega-menu-hover);
 }
 
 /*==================================================

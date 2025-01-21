@@ -395,3 +395,15 @@ Teacher access
 	background-color: #2f6384;
 
 }
+
+/*================================================================================================================
+  TranslatePress Menu
+  ================================================================================================================*/
+#trp-floater-ls-current-language .trp-ls-disabled-language img {
+	max-width: 25px;
+	max-width: 25px;
+}
+
+.trp-language-switcher-container.trp-floater-ls-names.trp-top-right.trp-color-dark {
+	min-width: 25px;
+}

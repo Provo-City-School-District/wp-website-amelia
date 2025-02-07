@@ -1,11 +1,11 @@
 /*
  Theme Name:   Amelia Earhart Elem Child (PCSD 2019 Theme)
  Theme URI:    https://amelia.provo.edu/
- Description:  Amelia Child theme of the Provo School District 2018 Theme
+ Description:  Amelia Child theme of the Provo School District 2019 Theme
  Author:       Josh Espinoza, Rob Francom, Shauna Sprunger
  Author URI:   https://tech.provo.edu
  Template:     PCSD-2019-Theme
- Version:      1.0.5
+ Version:      1.0.6
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  amelia-child
@@ -18,8 +18,6 @@ Variables
 	--theme-white: #fff;
 	--theme-black: #000;
 	--theme-gray: #ccc;
-	--even-tile-bg-color: #e1e9f4;
-	--odd-tile-bg-color: #cddbee;
 	--primary-color: #17425E;
 	--secondary-color: #ffe5cf;
 	--accent-color: #ffffff;

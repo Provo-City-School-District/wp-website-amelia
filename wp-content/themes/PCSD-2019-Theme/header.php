@@ -1,3 +1,7 @@
+<?php
+// gather child theme variables
+$theme_vars = my_theme_variables();
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -12,7 +16,7 @@
 		}
 		gtag('js', new Date());
 
-		gtag('config', 'G-0JSNW78RE0');
+		gtag('config', '<?= $theme_vars['google_tag_manager_id'] ?>');
 	</script>
 
 	<meta charset="utf-8" />
@@ -27,6 +31,7 @@
 	<?php wp_head(); ?>
 </head>
 
+
 <body>
 	<a class="skip-to-link" href="#trp-floater-ls">Skip to Translation</a>
 	<a class="skip-to-link" href="#mainMenu">Skip to Main Menu</a>
@@ -36,35 +41,19 @@
 		<h1><a href="https://provo.edu">Provo City School District</a></h1>
 	</header>
 	<header id="mainHeader">
-		<a href="<?php bloginfo('siteurl'); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/header-logo.png'; ?>" alt="Elem" id="siteLogo" />
-			<h1>Amelia Earhart Elementary School</h1>
-		</a>
-		<aside>
-			<ul class="sociallinks">
-				<li><a href="http://www.instagram.com/AmeliaProvo/"><img src="<?php echo get_template_directory_uri() . '/assets/icons/socialmedia-instagram-white.svg' ?>" alt="Link to Instagram" /></span>
-					</a>
-				</li>
-				<li><a href="http://twitter.com/ameliaPCSD"><img src="<?php echo get_template_directory_uri() . '/assets/icons/socialmedia-twitter-white.svg' ?>" alt="Link to Twitter" /></span>
-					</a>
-				</li>
-				<li><a href="https://www.facebook.com/ameliaearhartprovo"><img src="<?php echo get_template_directory_uri() . '/assets/icons/socialmedia-facebook-white.svg' ?>" alt="Link to Facebook" /></span>
-					</a>
-				</li>
-			</ul>
-			<!-- Search Form -->
-			<form id="cludo-search-form" action="/" method="get" autocomplete="off"><!-- Search Form -->
-				<label for="s" class="visuallyhidden" id="websitesearch">Website Search: </label>
-				<input class="search-input" aria-labelledby="websitesearch" id="s" name="s" type="text" value="<?php the_search_query(); ?>" placeholder="Search this website..." />
-				<input class="search-submit search-icon" type="submit" value="Search" />
+		<div>
+			<a href="<?php bloginfo('siteurl'); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/header-logo.png'; ?>" alt="Elem" id="siteLogo" /></a>
+		</div>
+		<div>
+			<a href="<?php bloginfo('siteurl'); ?>">
+				<h1><?= $theme_vars['full_school_name'] ?></h1>
+			</a>
+		</div>
+		<!-- Search Form -->
+		<div class="headerSearch">
+			<a href="<?php echo bloginfo('url'); ?>/search"><img src="<?php echo get_template_directory_uri() . '/assets/icons/search-lt.svg'; ?>" alt="Search" /></a>
+		</div>
 
-			</form>
-			<!-- end Search Form -->
-			<!-- Contact Information -->
-			<ul class="contactinfo" itemscope itemtype="https://schema.org/PostalAddress">
-				<li><span itemprop="streetAddress">2585 West 200 South</span><span itemprop="addressLocality"> Provo</span>, <span itemprop="addressRegion">Utah</span> <span itemprop="postalCode">84601</span><span class="phone" itemprop="telephone"> Phone: (801) 370-4630</span><span class="fax" itemprop="faxNumber"> Fax: (801) 370-4633</span>
-			</ul>
-			<!-- End Contact Information -->
-		</aside>
 		<nav id="mainMenu" role="navigation">
 			<input type="checkbox" id="reveal-menu" role="button" aria-labelledby="menu-label">
 			<label id="menu-label" class="mobileMenu" for="reveal-menu"><img src="<?php echo get_template_directory_uri() . '/assets/icons/menu.svg'; ?>" alt="" />Menu</label>

@@ -96,7 +96,9 @@ $theme_vars = my_theme_variables();
 		?>
 
 		<nav class="archiveNav">
-			<?php echo paginate_links(array('total' => $regular_query->max_num_pages)); ?>
+			<?php //echo paginate_links(array('total' => $regular_query->max_num_pages)); 
+			?>
+			<a href="<?php echo get_category_link(get_cat_ID('news')); ?>" class="button">View All News</a>
 		</nav>
 
 	</section>

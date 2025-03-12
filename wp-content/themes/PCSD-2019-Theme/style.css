@@ -922,10 +922,14 @@ div.featured-image {
 .postgrid .archiveNav {
   clear: both;
   width: 100%;
-  text-align: right;
-  padding: 0;
+  text-align: center;
+  /* padding: 0; */
+  padding-bottom: 1em;
+  font-size: 2em;
+  grid-column: 1 / span 3;
 }
 
+/* 
 #mainContent .archiveNav .page-numbers:first-child {
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -952,7 +956,7 @@ div.featured-image {
   padding-top: 6px;
   padding-bottom: 4px;
   font-size: 15px;
-}
+} */
 
 .featured-image-full {
   margin-top: 20px;

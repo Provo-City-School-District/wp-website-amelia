@@ -10,6 +10,23 @@ function my_theme_enqueue_styles()
 	wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', '', $app_version, false);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
+
+/*==========================================================================================
+// Favicon
+============================================================================================*/
+function my_theme_variables()
+{
+	$my_theme_variables = array(
+		'logo' => get_stylesheet_directory_uri() . '/assets/img/site-logo.png',
+		'full_school_name' => 'Amelia Earhart Elementary',
+		'short_school_name' => 'Amelia Earhart',
+		'school_address' => '2585 West 200 South Provo, Utah 84601',
+		'google_tag_manager_id' => 'G-0JSNW78RE0',
+
+	);
+	return $my_theme_variables;
+}
 /*==========================================================================================
 // Favicon
 ============================================================================================*/

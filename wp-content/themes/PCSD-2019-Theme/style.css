@@ -316,16 +316,6 @@ Overall Structural  Styles
   z-index: 1000;
 }
 
-#mainHeader {
-  height: 106px;
-  padding: 20px 20px 5px 30px;
-  position: fixed;
-  top: 35px;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
 #contentArea {
   position: fixed;
   top: 166px;
@@ -333,12 +323,28 @@ Overall Structural  Styles
   width: calc(100% - 320px);
   overflow-y: auto;
   z-index: 0;
-  background-color: var(--secondary-color);
+}
+
+#contentArea .post {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  position: relative;
+  min-height: 200px;
 }
 
 #mainContent {
   padding-bottom: 40px;
   background-color: var(--white);
+}
+
+@media (min-width: 1050px) {
+  #mainContent {
+    padding: 0 4em;
+  }
 }
 
 #mainMenu {
@@ -430,6 +436,8 @@ Overall Structural  Styles
 
 }
 
+
+
 /*================================================================================================================
 Header Styles
 ================================================================================================================*/
@@ -450,80 +458,68 @@ Header Styles
   color: #02365b;
 }
 
-#mainHeader aside {
-  position: absolute;
-  right: 0px;
-  top: 25px;
-  width: 670px;
+#mainHeader {
+  height: 106px;
+  position: fixed;
+  top: 35px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: max-content 1fr max-content;
+  place-content: center;
+  align-content: center;
 }
 
-#mainHeader .sociallinks {
-  position: absolute;
-  right: 470px;
-  top: -7px;
+#mainHeader {
+  background-color: var(--primary-color);
 }
 
-#mainHeader .sociallinks li {
-  display: inline;
-  margin: 0 10px 0 0;
+#mainHeader h1 {
+  font-size: 1.5em;
+  color: var(--theme-white);
+  font-weight: 900;
 }
 
-#mainHeader .sociallinks li img {
-  width: 35px;
+#mainHeader #siteLogo {
+  width: 90px;
 }
 
-#mainHeader #cludo-search-form label {
-  position: absolute;
-  left: -9999px;
+#mainHeader .headerSearch img {
+  width: 30px;
 }
 
-#mainHeader #cludo-search-form .search-input {
-  width: 400px;
-  height: 35px;
-  position: absolute;
-  right: 55px;
-  top: -7px;
-  padding: 0;
-  margin: 0;
+.contactinfo {
+  background-color: var(--white);
+
 }
 
-#mainHeader #cludo-search-form .search-submit {
-  width: 35px;
-  height: 35px;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: -7px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  cursor: pointer;
-  background-image: url(assets/icons/search-lt.svg);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  color: transparent;
-}
-
-#mainHeader .contactinfo {
-  margin-top: 30px;
+.contactinfo li {
   list-style: none;
-  text-align: right;
-  margin-right: 20px;
-  text-transform: uppercase;
+
 }
 
-#mainHeader .contactinfo li {
-  font-size: 10px;
+@media (min-width:750px) {
+  #mainHeader {
+    padding: 0 1em;
+  }
+
+  #mainHeader h1 {
+    font-size: 2.5em;
+  }
 }
 
-#mainHeader .contactinfo li:first-child {
-  font-size: 10px;
+@media (min-width:1050px) {
+  #mainHeader #siteLogo {
+    width: 120px;
+  }
+
+  .contactinfo {
+    padding: 0 2em;
+  }
 }
 
-#mainHeader .contactinfo li span.phone,
-#mainHeader .contactinfo li span.fax {
-  margin-left: 17px;
-}
 
 /*
 ================================================================================================================
@@ -641,53 +637,13 @@ Responsive Styles
 ============================================================ */
 
 /* Width Responsive */
-@media (max-width: 1484px) {
-  #mainHeader h1 {
-    font-size: 2.5em;
-    top: 17px;
-  }
-}
+@media (max-width: 1484px) {}
 
-@media (max-width: 1360px) {
-  #mainHeader h1 {
-    font-size: 2em;
-    top: 17px;
-  }
-}
+@media (max-width: 1360px) {}
 
-@media (max-width: 1238px) {
-  #mainHeader h1 {
-    top: 10px;
-  }
+@media (max-width: 1238px) {}
 
-  #mainHeader aside {
-    top: 65px;
-    left: 71px;
-    right: auto;
-  }
-
-
-  #mainHeader .contactinfo {
-    display: none;
-  }
-}
-
-@media (max-width: 1000px) {
-  #mainHeader h1 {
-    top: 10px;
-  }
-
-  #mainHeader aside {
-    top: 65px;
-    left: 71px;
-    right: auto;
-  }
-
-
-  #mainHeader .contactinfo {
-    display: none;
-  }
-}
+@media (max-width: 1000px) {}
 
 @media (max-width: 886px) {
   .desktop-menu {
@@ -714,112 +670,17 @@ Responsive Styles
   }
 }
 
-@media (max-width: 750px) {
-  #mainHeader h1 {
-    font-size: 1.5em;
-  }
+@media (max-width: 750px) {}
 
-  #mainHeader .sociallinks {
-    display: none;
-  }
+@media (max-width: 600px) {}
 
-  #mainHeader aside {
-    left: -88px;
-  }
-}
+@media (max-width: 585px) {}
 
-@media (max-width: 600px) {
-  #mainHeader h1 {
-    position: relative;
-    width: calc(100% - 132px);
-    left: -30px;
-    top: -15px;
-    float: right;
-  }
+@media (max-width: 465px) {}
 
-  #mainHeader aside {
-    position: relative;
-    top: -4px;
-    left: -30px;
-    right: 0;
-    width: calc(100% - 132px);
-    float: right;
-    margin-top: -40px;
-  }
+@media (max-width: 415px) {}
 
-  #cludo-search-form {
-    width: 100%;
-    position: relative;
-    display: block;
-  }
-
-  #mainHeader .sociallinks {
-    top: 0;
-  }
-
-  #mainHeader #cludo-search-form .search-input,
-  #mainHeader #cludo-search-form .search-submit {
-    top: 20px;
-  }
-
-  #mainHeader #cludo-search-form .search-input {
-    width: calc(100% - 35px);
-    left: 0px;
-  }
-
-  #mainHeader #cludo-search-form .search-submit {
-    right: 0px;
-  }
-}
-
-@media (max-width: 585px) {
-  #mainHeader {
-    padding-right: 0;
-  }
-
-  #mainHeader h1 {
-    font-size: 1.5em;
-    top: -10px;
-  }
-}
-
-@media (max-width: 465px) {
-  #mainHeader h1 {
-    font-size: 1.25em;
-    top: -10px;
-  }
-}
-
-@media (max-width: 415px) {
-  #mainHeader #siteLogo {
-    width: 60px;
-    margin-top: 0px;
-  }
-
-  #mainHeader #cludo-search-form .search-input {
-    left: -33px;
-    width: 100%;
-  }
-
-  #mainHeader h1 {
-    width: 74%;
-  }
-}
-
-@media (max-width: 375px) {
-  #mainHeader #siteLogo {
-    width: 50px;
-  }
-
-  #mainHeader h1 {
-    font-size: 1.04em;
-    top: -2px;
-  }
-
-  #pcsdBranding h1 {
-    font-size: 15px;
-  }
-}
+@media (max-width: 375px) {}
 
 /* Height Responsive */
 @media (max-height: 1066px) {
@@ -891,6 +752,7 @@ Front Page Alert
   width: 25px;
 }
 
+
 /*
 ================================================================================================================
 Slider
@@ -898,6 +760,9 @@ Slider
 */
 #announcments {
   background-color: #fff;
+  display: grid;
+  gap: 1em;
+  padding: 1em;
 }
 
 #announcments h1 {
@@ -905,22 +770,39 @@ Slider
   left: -9999px;
 }
 
-.slide {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  position: relative;
-  height: 500px;
+#announcments .sticky::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust the overlay color and opacity as needed */
+  z-index: 1;
 }
 
-.slide .slide-text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #ccd5df;
-  background-color: rgba(225, 233, 244, 0.9);
-  padding: 5px 5px 10px 15px;
+#announcments h2 {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+#announcments h2 a {
+  color: var(--white);
+}
+
+@media (min-width: 1050px) {
+  #announcments {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1em 4em;
+  }
+
+  #announcments .sticky:first-of-type {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+    min-height: 450px;
+  }
 }
 
 /*
@@ -941,12 +823,12 @@ Post List
 ================================================================================================================
 */
 .postgrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr;
 }
 
 .postgrid>h1 {
-  padding-left: 5%;
   width: 100%;
   background-color: #fff;
   padding-top: 10px;
@@ -955,14 +837,9 @@ Post List
   margin-bottom: 0;
 }
 
-.postgrid .post {
-  width: 27.33%;
-  padding: 20px 3%;
-}
 
-.postmeta {
-  max-width: 100%;
-}
+
+
 
 #mainContent .post .postmeta h2 {
   margin-top: 10px;
@@ -1067,6 +944,26 @@ div.featured-image {
   .featured-image-full {
     padding-top: 0;
     height: 500px;
+  }
+}
+
+@media (min-width: 800px) {
+  .postgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .postgrid h1 {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (min-width: 1050px) {
+  .postgrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .postgrid h1 {
+    grid-column: 1 / span 3;
   }
 }
 
@@ -1214,9 +1111,10 @@ Tile styles
 
 @media (max-width: 1054px) {
 
-  .postgrid .post,
+
   .tiles .tile {
-    width: 44%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .tile-page .currentContent {
@@ -1230,7 +1128,7 @@ Tile styles
 
 @media (max-width: 840px) {
 
-  .postgrid .post,
+
   .tiles .tile {
     width: 94%;
   }
@@ -1379,10 +1277,6 @@ featured Gallery styles
   max-height: 100px;
   max-width: 200px;
   display: inline-block;
-}
-
-.featured-nav .slick-center {
-  border: 2px solid #e16c16;
 }
 
 /*
@@ -1902,10 +1796,6 @@ Gallery Page template styles
   background-repeat: no-repeat;
   margin: 0 5px 10px 5px;
   border: 2px solid #fff;
-}
-
-.gallery-page .slick-center {
-  border: 2px solid #e16c16;
 }
 
 /*

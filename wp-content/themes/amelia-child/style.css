@@ -36,9 +36,7 @@ Theme specific coloring
 	background-color: var(--primary-color);
 }
 
-#contentArea {
-	background-color: var(--secondary-color);
-}
+
 
 a {
 	text-decoration: none;
@@ -50,9 +48,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-#mainHeader #cludo-search-form .search-submit {
-	background-color: var(--primary-color);
-}
+
 
 /*================================================================================================================
 Fonts
@@ -112,41 +108,6 @@ ul li~h3 {
 	list-style: none;
 }
 
-/*================================================================================================================
-header styles
-================================================================================================================*/
-#mainHeader {
-	background-repeat: no-repeat;
-	background-color: var(--primary-color);
-	background-size: cover;
-}
-
-#mainHeader h1 {
-	position: absolute;
-	left: 127px;
-	top: 16px;
-	color: var(--theme-white);
-	font-weight: 900;
-}
-
-#mainHeader #siteLogo {
-	width: 90px;
-	margin-left: -14px;
-}
-
-#mainSidebar h1 {
-	font-size: 2em;
-	color: #fff;
-}
-
-#mainHeader .contactinfo {
-	color: var(--theme-white);
-}
-
-#mainHeader .contactinfo li span.phone,
-#mainHeader .contactinfo li span.fax {
-	margin-left: 10px;
-}
 
 /*================================================================================================================
 Main Menu
@@ -296,6 +257,11 @@ Content Area
 /*================================================================================================================
 sidebar Area
 ================================================================================================================*/
+#mainSidebar h1 {
+	font-size: 2em;
+	color: #fff;
+}
+
 #mainSidebar a {
 	color: var(--theme-white);
 }

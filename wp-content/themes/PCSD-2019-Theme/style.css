@@ -2,7 +2,7 @@
 	Theme Name: Provo City School District 2019
 	Author: District Web Team
 	Author URI: https://employee.provo.edu/technology/
-	Version: 2.0.0
+	Version: 2.0.1
 */
 /*================================================================================================================
 Variables
@@ -840,7 +840,7 @@ Post List
 
 
 
-#mainContent .post {
+#mainContent.frontpage .post {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -851,7 +851,7 @@ Post List
   min-height: 200px;
 }
 
-#mainContent .post::before {
+#mainContent.frontpage .post::before {
   content: "";
   position: absolute;
   top: 0;
@@ -863,7 +863,7 @@ Post List
   z-index: 1;
 }
 
-#mainContent .post h2 a {
+#mainContent.frontpage .post h2 a {
   position: relative;
   z-index: 2;
   color: var(--white);

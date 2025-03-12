@@ -770,6 +770,7 @@ Slider
   left: -9999px;
 }
 
+
 #announcments .sticky::before {
   content: "";
   position: absolute;
@@ -839,7 +840,34 @@ Post List
 
 
 
+#mainContent .post {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  position: relative;
+  min-height: 200px;
+}
 
+#mainContent .post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust the overlay color and opacity as needed */
+  z-index: 1;
+}
+
+#mainContent .post h2 a {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
 
 #mainContent .post .postmeta h2 {
   margin-top: 10px;

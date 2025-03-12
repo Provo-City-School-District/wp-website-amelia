@@ -45,7 +45,7 @@ $theme_vars = my_theme_variables();
 		endif;
 		?>
 	</section>
-	<section id="mainContent" class="postgrid newsBlog">
+	<section id="mainContent" class="postgrid newsBlog frontpage">
 		<h1><?= $theme_vars['short_school_name'] ?> News</h1>
 		<?php
 

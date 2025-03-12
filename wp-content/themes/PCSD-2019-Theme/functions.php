@@ -11,8 +11,8 @@ function theme_specific_stylesheet()
 
     /*   CALL ALL CSS AND SCRIPTS FOR SITE */
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', '', $asset_version, false);
-    wp_enqueue_script('slick-script', get_template_directory_uri() . '/assets/slick/slick.min.js', array('jquery'), $asset_version, true);
-    wp_enqueue_script('my-custom-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery', 'slick-script',), $asset_version, true);
+
+    wp_enqueue_script('my-custom-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), $asset_version, true);
     if (is_404()) {
         wp_enqueue_script('404easterEgg', null, null, true);
     }

@@ -25,8 +25,6 @@ $theme_vars = my_theme_variables();
 															the_title(); ?> | <?php } ?><?php if (is_single()) {
 																							the_title(); ?> | <?php } ?><?php bloginfo('name'); ?></title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:700,900" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/slick/slick.css' ?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/assets/slick/slick-theme.css' ?>" />
 	<link href="https://customer.cludo.com/css/templates/v1.1/essentials/cludo-search.min.css" type="text/css" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>

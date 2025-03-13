@@ -823,7 +823,8 @@ page layouts
 Post List
 ================================================================================================================
 */
-.postgrid {
+.postgrid,
+#mainContent.frontpage {
   display: grid;
   gap: 1em;
   grid-template-columns: 1fr;
@@ -839,6 +840,9 @@ Post List
 }
 
 
+.frontpage h1 {
+  /* grid-column: 1/ span 3; */
+}
 
 #mainContent.frontpage .post {
   background-size: cover;
@@ -935,7 +939,7 @@ div.featured-image {
   /* padding: 0; */
   /* padding-bottom: 1em;
   font-size: 2em; */
-  grid-column: 1 / span 3;
+  /* grid-column: 1 / span 3; */
 }
 
 
@@ -981,15 +985,11 @@ div.featured-image {
   margin-top: 40px;
 }
 
-@media (min-width: 1400px) {
-  .featured-image-full {
-    padding-top: 0;
-    height: 500px;
-  }
-}
 
 @media (min-width: 800px) {
-  .postgrid {
+
+  .postgrid,
+  #mainContent.frontpage {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -999,12 +999,25 @@ div.featured-image {
 }
 
 @media (min-width: 1050px) {
-  .postgrid {
+
+  .postgrid,
+  #mainContent.frontpage {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .postgrid h1 {
     grid-column: 1 / span 3;
+  }
+
+  .postgrid .archiveNav {
+    grid-column: 1 / span 3;
+  }
+}
+
+@media (min-width: 1400px) {
+  .featured-image-full {
+    padding-top: 0;
+    height: 500px;
   }
 }
 
